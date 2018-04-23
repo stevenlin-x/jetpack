@@ -291,7 +291,7 @@ class Jetpack_Twitter_Timeline_Widget extends WP_Widget {
 			'theme'        => 'light',
 			'chrome'       => array(),
 			'tweet-limit'  => null,
-			'dnt'          => apply_filters( 'jetpack_twitter_timeline_default_dnt', false ),
+			'dnt'          => true,
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
