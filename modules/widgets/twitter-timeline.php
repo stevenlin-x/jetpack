@@ -257,6 +257,12 @@ class Jetpack_Twitter_Timeline_Widget extends WP_Widget {
 			}
 		}
 
+		if ( 'true' === $new_instance['dnt'] | 'false' === $new_instance['dnt'] ) {
+				$instance['dnt'] = $new_instance['dnt'];
+		} else {
+			$instance['dnt'] = 'true';
+		}
+
 		return $instance;
 	}
 
@@ -291,7 +297,7 @@ class Jetpack_Twitter_Timeline_Widget extends WP_Widget {
 			'theme'        => 'light',
 			'chrome'       => array(),
 			'tweet-limit'  => null,
-			'dnt'          => true,
+			'dnt'          => apply_filters( 'jetpack_twitter_timeline_default_dnt', 'true' ),
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
